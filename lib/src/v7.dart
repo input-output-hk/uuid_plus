@@ -29,7 +29,7 @@ class UuidV7 {
     // Extract the 48-bit timestamp from the first 6 bytes.
     var timestampMillis = Int64(0);
     for (var i = 0; i < 6; i++) {
-      // Using BigInt due to how JS binary shift works,
+      // Using Int64 due to how JS binary shift works,
       // it truncates the number to be uint32 which is not enough in this case.
       timestampMillis = (timestampMillis << 8) | bytes[i];
     }
